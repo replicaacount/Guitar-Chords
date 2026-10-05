@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Chord Coach</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎸 Guitar Chord Coach</h1>
+
+    <div class="card">
+
+        <h2>Practice Settings</h2>
+
+        <label>
+            BPM: <span id="bpmValue">80</span>
+        </label>
+
+        <input
+            type="range"
+            id="bpm"
+            min="40"
+            max="180"
+            value="80"
+        >
+
+        <label>
+            Chord Change Delay:
+            <span id="delayValue">1.0s</span>
+        </label>
+
+        <input
+            type="range"
+            id="delay"
+            min="0"
+            max="3000"
+            step="100"
+            value="1000"
+        >
+
+        <label>Strumming Pattern</label>
+
+        <select id="patternSelect">
+            <option value="DUDU">D U D U</option>
+            <option value="DUDDU">D U D D U</option>
+            <option value="DUUDU">D U U D U</option>
+            <option value="DDUUDU">D D U U D U</option>
+            <option value="D_DUDU">D - D U D U</option>
+            <option value="random">Random Pattern</option>
+        </select>
+
+        <label>Chord Mode</label>
+
+        <select id="modeSelect">
+            <option value="normal">Normal Sequence</option>
+            <option value="random">Random Chord</option>
+        </select>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Chord Sequence</h2>
+
+        <div id="chordList"></div>
+
+        <div class="addRow">
+
+            <select id="chordSelect">
+                <option>Em</option>
+                <option>C</option>
+                <option>G</option>
+                <option>D</option>
+                <option>Am</option>
+                <option>A</option>
+                <option>E</option>
+                <option>F</option>
+                <option>Dm</option>
+                <option>G7</option>
+                <option>Em7</option>
+                <option>Am7</option>
+            </select>
+
+            <button id="addChordBtn">Add</button>
+            <button id="clearBtn">Clear</button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card chordArea">
+
+        <div>
+            <span>CURRENT</span>
+            <strong id="currentChord">Em</strong>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div>
+            <span>NEXT</span>
+            <strong id="nextChord">C</strong>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Strumming</h2>
+
+        <div id="patternDisplay"></div>
+
+        <div id="beatLabel">
+            Ready
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🎤 Guitar Listener</h2>
+
+        <button id="micBtn">
+            Enable Microphone
+        </button>
+
+        <p id="micStatus">
+            Microphone OFF
+        </p>
+
+        <div class="detector">
+
+            <div>
+                <small>EXPECTED</small>
+                <strong id="expectedAudioChord">
+                    Em
+                </strong>
+            </div>
+
+            <div>
+                <small>DETECTED</small>
+                <strong id="detectedChord">
+                    —
+                </strong>
+            </div>
+
+            <div>
+                <small>CONFIDENCE</small>
+                <strong id="confidence">
+                    0%
+                </strong>
+            </div>
+
+        </div>
+
+        <div class="meter">
+            <div id="meterFill"></div>
+        </div>
+
+        <p id="audioFeedback">
+            Enable microphone and play your guitar.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🔊 Voice</h2>
+
+        <button id="voiceBtn">
+            Voice ON
+        </button>
+
+        <button id="testVoiceBtn">
+            Test Voice
+        </button>
+
+        <p id="voiceStatus">
+            Voice is ON
+        </p>
+
+    </div>
+
+
+    <div class="card buttons">
+
+        <button id="startBtn">
+            ▶ Start Practice
+        </button>
+
+        <button id="pauseBtn" disabled>
+            ⏸ Pause
+        </button>
+
+        <button id="stopBtn" disabled>
+            ⏹ Stop
+        </button>
+
+    </div>
+
+
+    <div class="status">
+
+        <div id="countdown">
+            Ready
+        </div>
+
+        <div id="feedbackIcon">
+            🎸
+        </div>
+
+        <h2 id="feedbackTitle">
+            Ready
+        </h2>
+
+        <p id="feedbackText">
+            Press Start Practice.
+        </p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

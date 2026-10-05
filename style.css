@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #10131a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 92%;
+    max-width: 900px;
+    margin: auto;
+    padding: 25px 0 50px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: #191e27;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+select,
+button {
+    border: none;
+    border-radius: 9px;
+    padding: 11px 15px;
+    font-size: 15px;
+}
+
+select {
+    width: 100%;
+    background: #272e39;
+    color: white;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #303846;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #414b5c;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.addRow {
+    display: flex;
+    gap: 8px;
+}
+
+.addRow select {
+    flex: 1;
+    margin: 0;
+}
+
+#chordList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.chordChip {
+    background: #303846;
+    border-radius: 9px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chordChip button {
+    background: #a52d2d;
+    padding: 3px 8px;
+}
+
+.chordArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.chordArea div {
+    flex: 1;
+}
+
+.chordArea span {
+    display: block;
+    opacity: 0.6;
+    font-size: 13px;
+}
+
+.chordArea strong {
+    display: block;
+    font-size: 65px;
+    margin-top: 8px;
+}
+
+.arrow {
+    flex: 0 !important;
+    font-size: 40px;
+}
+
+#patternDisplay {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    min-height: 55px;
+}
+
+.strum {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #303846;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.strum.active {
+    background: #00a86b;
+    transform: scale(1.12);
+}
+
+#beatLabel {
+    text-align: center;
+    margin-top: 15px;
+    opacity: 0.7;
+}
+
+.detector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.detector div {
+    background: #252b35;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.detector small {
+    display: block;
+    opacity: 0.6;
+    margin-bottom: 8px;
+}
+
+.detector strong {
+    font-size: 28px;
+}
+
+.meter {
+    height: 12px;
+    background: #303641;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 18px;
+}
+
+#meterFill {
+    width: 0%;
+    height: 100%;
+    background: #00a86b;
+    transition: width 0.1s;
+}
+
+#audioFeedback {
+    text-align: center;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    flex: 1;
+}
+
+#startBtn {
+    background: #00a86b;
+}
+
+.status {
+    text-align: center;
+    padding: 20px;
+}
+
+#countdown {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#feedbackIcon {
+    font-size: 40px;
+    margin: 10px;
+}
+
+@media(max-width:600px) {
+
+    .chordArea {
+        gap: 10px;
+    }
+
+    .chordArea strong {
+        font-size: 45px;
+    }
+
+    .arrow {
+        font-size: 25px;
+    }
+
+    .detector {
+        grid-template-columns: 1fr;
+    }
+
+    .addRow {
+        flex-wrap: wrap;
+    }
+
+    .addRow select {
+        width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}
